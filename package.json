@@ -1,0 +1,8 @@
+{
+  "name": "dios-web-design",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
