@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dios Web Design | Digital Studio</title>
+  <meta name="description" content="A polished agency landing page for Dios Web Design with services, portfolio highlights, process, and contact call-to-action." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow page-glow--one"></div>
+  <div class="page-glow page-glow--two"></div>
+
+  <header class="site-header" data-header>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#home" class="brand" aria-label="Dios Web Design home">
+        <span class="brand__mark">D</span>
+        <span class="brand__text">Dios<span>Design</span></span>
+      </a>
+      <button class="nav__toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <div class="nav__menu" id="nav-menu" data-nav-menu>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav__cta" href="#contact">Start a project</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero section">
+      <div class="hero__content reveal">
+        <p class="eyebrow">Websites that look expensive and convert fast</p>
+        <h1>Launch a sharp, modern website that makes your brand impossible to ignore.</h1>
+        <p class="hero__lead">Dios Web Design builds high-impact landing pages, portfolio sites, and business websites with crisp visuals, responsive layouts, and clear calls-to-action.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#contact">Book a free consult</a>
+          <a class="button button--ghost" href="#work">See featured work</a>
+        </div>
+        <div class="hero__stats" aria-label="Studio highlights">
+          <div><strong>48h</strong><span>prototype turnaround</span></div>
+          <div><strong>100%</strong><span>responsive builds</span></div>
+          <div><strong>SEO</strong><span>ready structure</span></div>
+        </div>
+      </div>
+      <div class="hero__visual reveal reveal--delay" aria-hidden="true">
+        <div class="browser-card">
+          <div class="browser-card__bar"><span></span><span></span><span></span></div>
+          <div class="browser-card__body">
+            <div class="mock-hero"></div>
+            <div class="mock-grid">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="mock-panel">
+              <b>Conversion lift</b>
+              <strong>+38%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="logos section reveal" aria-label="Trusted by teams">
+      <span>Brand strategy</span>
+      <span>UX/UI design</span>
+      <span>Landing pages</span>
+      <span>Responsive builds</span>
+      <span>SEO foundations</span>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section-heading reveal">
+        <p class="eyebrow">What we do</p>
+        <h2>Everything your site needs to feel premium from the first click.</h2>
+      </div>
+      <div class="card-grid">
+        <article class="service-card reveal">
+          <span class="service-card__icon">✦</span>
+          <h3>Custom Web Design</h3>
+          <p>Unique page systems, polished typography, and visual hierarchy designed around your offer.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-card__icon">↗</span>
+          <h3>Conversion Landing Pages</h3>
+          <p>Focused sections, persuasive CTAs, and trust-building layouts built to move visitors forward.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-card__icon">⚡</span>
+          <h3>Fast Static Builds</h3>
+          <p>Clean HTML, CSS, and JavaScript with lightweight interactions and quick loading performance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section work" id="work">
+      <div class="section-heading section-heading--split reveal">
+        <div>
+          <p class="eyebrow">Featured layouts</p>
+          <h2>Design direction made for bold brands.</h2>
+        </div>
+        <p>Use these sections as a polished starting point for service businesses, creators, studios, and local brands.</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="portfolio-card portfolio-card--large reveal">
+          <div class="portfolio-card__image gradient-one"></div>
+          <div>
+            <span>Agency landing page</span>
+            <h3>Premium service funnel</h3>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__image gradient-two"></div>
+          <div>
+            <span>Creator site</span>
+            <h3>Personal brand showcase</h3>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__image gradient-three"></div>
+          <div>
+            <span>Local business</span>
+            <h3>Trust-first booking page</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Simple process</p>
+        <h2>From idea to live site without the chaos.</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item reveal"><span>01</span><h3>Clarify</h3><p>We map your goals, audience, offer, pages, and must-have content.</p></div>
+        <div class="timeline__item reveal"><span>02</span><h3>Design</h3><p>We create a sleek visual direction with layout, colors, and section flow.</p></div>
+        <div class="timeline__item reveal"><span>03</span><h3>Build</h3><p>We turn the design into a responsive website with clean front-end code.</p></div>
+        <div class="timeline__item reveal"><span>04</span><h3>Launch</h3><p>We polish details, test across screen sizes, and prepare the site for sharing.</p></div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact__panel reveal">
+        <div>
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Tell us what you want to build next.</h2>
+          <p>Send your project details and we’ll help turn the idea into a clean, conversion-ready website.</p>
+        </div>
+        <form class="contact-form" aria-label="Project contact form">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>
+            <span>Project details</span>
+            <textarea name="message" rows="4" placeholder="What kind of website do you need?"></textarea>
+          </label>
+          <button class="button button--primary" type="submit">Send project request</button>
+          <p class="form-note" data-form-note role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span data-year></span> Dios Web Design. Built for clear, confident online presence.</p>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
