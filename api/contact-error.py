@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 from http.server import BaseHTTPRequestHandler
 
 
-DEFAULT_REPLY_TO = "hello@dios.agency"
+DEFAULT_CONTACT_EMAIL = "eight888studios@gmail.com"
 DEFAULT_SUBJECT = "✗ Something went wrong"
 
 
@@ -33,9 +33,9 @@ def send_error_email(payload):
     smtp_port = int(os.environ.get("SMTP_PORT", "587"))
     smtp_user = os.environ.get("SMTP_USER")
     smtp_pass = os.environ.get("SMTP_PASS")
-    to_address = os.environ.get("CONTACT_ERROR_TO")
+    to_address = os.environ.get("CONTACT_ERROR_TO", DEFAULT_CONTACT_EMAIL)
     from_address = os.environ.get("SMTP_FROM", smtp_user or "")
-    reply_to = payload.get("email") or os.environ.get("CONTACT_REPLY_TO", DEFAULT_REPLY_TO)
+    reply_to = payload.get("email") or os.environ.get("CONTACT_REPLY_TO", DEFAULT_CONTACT_EMAIL)
 
     missing = [name for name, value in {
         "SMTP_USER": smtp_user,
