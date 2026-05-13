@@ -3,230 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dios Web Design | dios.agency</title>
-  <meta name="description" content="Award-winning web design, development, hosting and marketing. Japanese-crafted precision for global brands.">
+  <title>Dio's Agency | Websites, Link Pages & Digital Systems</title>
+  <meta name="description" content="Dio's Agency builds clean, fast websites, link-in-bio pages, and digital systems for creators, local businesses, clothing brands, and service providers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=DM+Sans:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #0a0a0f;
-      --paper: #f5f0e8;
-      --red: #c0392b;
-      --gold: #c9a84c;
-      --mist: #d6d0c4;
-      --white: #fdfaf5;
-      --ff-display: 'Shippori Mincho B1', serif;
-      --ff-body: 'DM Sans', sans-serif;
-      --ff-accent: 'Zen Kaku Gothic New', sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { background: var(--paper); color: var(--ink); font-family: var(--ff-body); line-height: 1.6; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    img, svg { display: block; max-width: 100%; }
-    ::selection { background: var(--red); color: var(--paper); }
-
-    #progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--red); z-index: 999; transition: width 0.1s linear; }
-
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 120;
-      display: grid; grid-template-columns: auto 1fr auto auto; gap: 1.5rem; align-items: center;
-      padding: 1rem clamp(1.5rem, 5vw, 4rem);
-      background: rgba(245, 240, 232, 0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--mist);
-    }
-    .nav-logo { font-family: var(--ff-display); font-size: 1.65rem; font-weight: 800; letter-spacing: 0.08em; line-height: 1; }
-    .nav-logo span { color: var(--red); }
-    .nav-links { display: flex; justify-content: flex-end; gap: clamp(1rem, 2.5vw, 2rem); list-style: none; }
-    nav a:not(.nav-logo), .mobile-menu a { font-family: var(--ff-accent); }
-    .nav-links a {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-    }
-    nav a::after {
-      content: ''; display: block; height: 1px;
-      background: var(--red); transform: scaleX(0);
-      transform-origin: left; transition: transform 0.3s ease;
-    }
-    nav a:hover::after { transform: scaleX(1); }
-    .nav-contact { font-family: var(--ff-accent); font-size: 0.68rem; letter-spacing: 0.1em; color: #555; white-space: nowrap; }
-    .nav-cta, .btn-primary, .btn-ghost, .hosting-button {
-      display: inline-flex; align-items: center; justify-content: center;
-      font-family: var(--ff-accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      border: 1px solid currentColor; padding: 0.82rem 1.35rem; transition: background 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
-    }
-    .nav-cta:hover, .btn-ghost:hover, .hosting-button:hover { background: var(--ink); color: var(--paper); transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--red); }
-    .menu-toggle { display: none; width: 2.75rem; height: 2.75rem; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
-    .menu-toggle span { display: block; width: 1.1rem; height: 1px; background: currentColor; margin: 0.28rem auto; }
-    .mobile-backdrop { position: fixed; inset: 0; background: rgba(10,10,15,0.55); z-index: 190; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
-    .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
-    .mobile-menu { position: fixed; top: 0; right: -100%; width: 80vw; max-width: 320px; height: 100vh; background: var(--ink); z-index: 200; transition: right 0.35s cubic-bezier(0.77,0,0.175,1); padding: 5rem 2.5rem; }
-    .mobile-menu.open { right: 0; }
-    .mobile-menu a { display: block; font-family: var(--ff-display); font-size: 1.8rem; color: var(--paper); padding: 0.75rem 0; border-bottom: 1px solid rgba(214,208,196,0.1); }
-    .mobile-menu small { display: block; margin-top: 2rem; color: var(--gold); font-family: var(--ff-accent); letter-spacing: 0.1em; }
-
-    section { padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 8vw, 8rem); position: relative; }
-    .section-head { position: relative; max-width: 980px; }
-    .section-count { position: absolute; top: -0.52em; left: -0.08em; font-family: var(--ff-display); font-size: 9rem; font-weight: 800; line-height: 1; opacity: 0.05; pointer-events: none; }
-    .section-label { font-family: var(--ff-accent); font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 1rem; position: relative; z-index: 1; }
-    .section-title { font-family: var(--ff-display); font-size: clamp(2.25rem, 5.6vw, 4.8rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 1.5rem; position: relative; z-index: 1; }
-    .section-rule { width: 3rem; height: 1px; background: var(--red); margin-bottom: 2rem; }
-    .section-intro { max-width: 640px; color: #555; font-size: 0.98rem; line-height: 1.9; }
-    .vertical-mark { position: absolute; right: clamp(1rem, 4vw, 3rem); top: 7rem; writing-mode: vertical-rl; font-family: var(--ff-accent); color: rgba(10,10,15,0.10); letter-spacing: 0.4em; pointer-events: none; }
-
-    #hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding: clamp(7rem, 12vw, 11rem) clamp(1.5rem, 8vw, 8rem) clamp(4rem, 8vw, 7rem); background: var(--ink); color: var(--paper); overflow: hidden; }
-    #hero::before { content: ''; position: absolute; inset: 13% 12% auto auto; width: clamp(15rem, 38vw, 42rem); height: clamp(15rem, 38vw, 42rem); background: radial-gradient(circle, rgba(192,57,43,0.28), transparent 68%); filter: blur(20px); }
-    #hero::after { content: ''; position: absolute; inset: auto auto -14rem -12rem; width: 32rem; height: 32rem; border: 1px solid rgba(201,168,76,0.22); transform: rotate(18deg); }
-    .grain { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; mix-blend-mode: screen; }
-    .vert-text { position: absolute; right: clamp(1rem, 4vw, 3rem); top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-family: var(--ff-accent); font-size: clamp(0.65rem, 1.5vw, 0.85rem); letter-spacing: 0.25em; color: rgba(245,240,232,0.2); z-index: 2; pointer-events: none; }
-    .hero-inner { position: relative; z-index: 3; max-width: 1050px; }
-    .hero-label { font-family: var(--ff-accent); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .hero-title { font-family: var(--ff-display); font-size: clamp(3.65rem, 10.5vw, 10rem); font-weight: 800; line-height: 0.92; letter-spacing: -0.045em; margin-bottom: 2rem; animation: inkWipe 1.2s cubic-bezier(0.77,0,0.175,1) 0.3s both; }
-    .hero-title em { color: var(--red); font-style: normal; }
-    .hero-sub { color: var(--mist); max-width: 560px; margin-bottom: 2.4rem; font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.8; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
-    .btn-primary { border-color: var(--paper); color: var(--paper); }
-    .btn-primary:hover { background: var(--paper); color: var(--ink); transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--red); }
-    .hero .btn-ghost, #hero .btn-ghost { color: var(--paper); border-color: rgba(245,240,232,0.6); }
-    .bg-num { position: absolute; right: -0.05em; bottom: -0.2em; font-family: var(--ff-display); font-size: clamp(9rem, 30vw, 23rem); font-weight: 800; color: rgba(245,240,232,0.03); line-height: 1; pointer-events: none; z-index: 2; }
-
-    #services, #hosting { background: var(--white); border-top: 1px solid var(--mist); }
-    .services-grid, .portfolio-grid, .hosting-grid { display: grid; gap: 1px; background: var(--mist); margin-top: 4rem; border: 1px solid var(--mist); }
-    .services-grid { grid-template-columns: repeat(3, 1fr); }
-    .service-card, .hosting-card { background: var(--white); padding: clamp(2rem, 4vw, 3rem) 2rem; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
-    .service-card:hover, .hosting-card:hover { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--red); z-index: 2; }
-    .service-num { position: absolute; top: 0.35rem; right: 1rem; font-family: var(--ff-display); font-size: 5rem; font-weight: 800; color: rgba(10,10,15,0.05); line-height: 1; }
-    .service-card h3, .hosting-name, .mkt-title { font-family: var(--ff-display); font-weight: 600; }
-    .service-card h3 { font-size: 1.45rem; margin-bottom: 1rem; }
-    .service-card p { font-size: 0.9rem; color: #555; line-height: 1.8; margin-bottom: 1.5rem; }
-    .service-list, .hosting-features { list-style: none; }
-    .service-list li { font-family: var(--ff-accent); font-size: 0.78rem; letter-spacing: 0.05em; color: #555; padding: 0.35rem 0; border-bottom: 1px solid var(--mist); }
-    .service-list li:last-child { border-bottom: 0; }
-
-    #work { background: var(--paper); border-top: 1px solid var(--mist); }
-    .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
-    .portfolio-tile { aspect-ratio: 4 / 3; position: relative; overflow: hidden; cursor: pointer; color: var(--paper); background: var(--ink); border: 0; text-align: left; }
-    .portfolio-tile:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
-    .portfolio-tile-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1a24, #2a2a3a); transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
-    .portfolio-tile-bg::before { content: ''; position: absolute; inset: 14%; border: 1px solid rgba(245,240,232,0.16); transform: skew(-11deg); }
-    .portfolio-tile-bg::after { content: ''; position: absolute; width: 52%; height: 1px; left: 20%; top: 50%; background: rgba(201,168,76,0.65); transform: rotate(-21deg); }
-    .portfolio-tile:hover .portfolio-tile-bg, .portfolio-tile:focus .portfolio-tile-bg { transform: scale(1.05); }
-    .portfolio-tile-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; background: linear-gradient(to top, rgba(10,10,15,0.92), rgba(10,10,15,0.08)); opacity: 0; transition: opacity 0.3s; }
-    .portfolio-tile:hover .portfolio-tile-overlay, .portfolio-tile:focus .portfolio-tile-overlay { opacity: 1; }
-    .portfolio-tile-label { font-family: var(--ff-accent); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
-    .portfolio-tile-title { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 600; line-height: 1.25; }
-    .portfolio-tile-desc { margin-top: 0.55rem; color: var(--mist); font-size: 0.8rem; line-height: 1.55; }
-    .portfolio-tile:nth-child(1) .portfolio-tile-bg { background: radial-gradient(circle at 72% 24%, rgba(201,168,76,0.32), transparent 30%), linear-gradient(135deg,#1a1520,#2d2040); }
-    .portfolio-tile:nth-child(2) .portfolio-tile-bg { background: radial-gradient(circle at 28% 70%, rgba(192,57,43,0.24), transparent 28%), linear-gradient(135deg,#0d1a1a,#102a2a); }
-    .portfolio-tile:nth-child(3) .portfolio-tile-bg { background: radial-gradient(circle at 80% 20%, rgba(245,240,232,0.18), transparent 24%), linear-gradient(135deg,#1a0e0e,#2a1010); }
-    .portfolio-tile:nth-child(4) .portfolio-tile-bg { background: radial-gradient(circle at 36% 35%, rgba(201,168,76,0.25), transparent 26%), linear-gradient(135deg,#0d1520,#102030); }
-    .portfolio-tile:nth-child(5) .portfolio-tile-bg { background: radial-gradient(circle at 75% 62%, rgba(192,57,43,0.24), transparent 26%), linear-gradient(135deg,#1a1a10,#2a2a15); }
-    .portfolio-tile:nth-child(6) .portfolio-tile-bg { background: radial-gradient(circle at 20% 24%, rgba(201,168,76,0.28), transparent 24%), linear-gradient(135deg,#160d1a,#26102a); }
-    .portfolio-tile:nth-child(7) .portfolio-tile-bg { background: radial-gradient(circle at 50% 50%, rgba(245,240,232,0.14), transparent 28%), linear-gradient(135deg,#0d1a10,#102a15); }
-    .portfolio-tile:nth-child(8) .portfolio-tile-bg { background: radial-gradient(circle at 70% 30%, rgba(192,57,43,0.30), transparent 25%), linear-gradient(135deg,#1a1510,#2a2015); }
-    .portfolio-tile:nth-child(9) .portfolio-tile-bg { background: radial-gradient(circle at 24% 68%, rgba(201,168,76,0.28), transparent 25%), linear-gradient(135deg,#10101a,#15152a); }
-
-    #about { background: var(--ink); color: var(--paper); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; border-top: 1px solid rgba(214,208,196,0.15); overflow: hidden; }
-    #about .section-label { color: var(--gold); }
-    #about .section-count { color: var(--paper); opacity: 0.05; }
-    #about p { color: var(--mist); font-size: 0.96rem; line-height: 1.9; margin-bottom: 1rem; }
-    .about-deco { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(214,208,196,0.15); border: 1px solid rgba(214,208,196,0.15); position: relative; }
-    .about-deco::before { content: '匠'; position: absolute; inset: auto -0.18em -0.62em auto; font-family: var(--ff-display); font-size: clamp(9rem, 18vw, 16rem); color: rgba(245,240,232,0.04); line-height: 1; pointer-events: none; }
-    .about-stat { background: var(--ink); padding: 2.5rem 1.5rem; text-align: center; position: relative; z-index: 1; }
-    .about-stat-num { display: block; font-family: var(--ff-display); font-size: clamp(2.25rem, 4.5vw, 3rem); font-weight: 800; color: var(--gold); }
-    .about-stat-label { font-family: var(--ff-accent); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mist); }
-
-    .hosting-grid { grid-template-columns: repeat(3, 1fr); }
-    .hosting-card.featured { background: var(--ink); color: var(--paper); }
-    .hosting-tier { font-family: var(--ff-accent); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 0.75rem; }
-    .hosting-card.featured .hosting-tier { color: var(--gold); }
-    .hosting-name { font-size: 1.7rem; font-weight: 800; margin-bottom: 0.5rem; }
-    .hosting-price { font-family: var(--ff-display); font-size: 2.5rem; font-weight: 800; color: var(--red); margin-bottom: 1.5rem; }
-    .hosting-price span { font-size: 1rem; font-weight: 400; opacity: 0.65; }
-    .hosting-card.featured .hosting-price { color: var(--gold); }
-    .hosting-features { margin-bottom: 2rem; }
-    .hosting-features li { font-size: 0.85rem; padding: 0.5rem 0; border-bottom: 1px solid var(--mist); color: #555; }
-    .hosting-card.featured .hosting-features li { border-color: rgba(214,208,196,0.2); color: var(--mist); }
-    .hosting-features li::before { content: '— '; color: var(--red); }
-    .hosting-card.featured .hosting-features li::before { color: var(--gold); }
-    .hosting-button { color: var(--ink); }
-    .hosting-card.featured .hosting-button { color: var(--paper); border-color: var(--paper); }
-    .hosting-card.featured .hosting-button:hover { background: var(--paper); color: var(--ink); }
-
-    #marketing { background: var(--paper); border-top: 1px solid var(--mist); }
-    .marketing-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 4rem; }
-    .marketing-item { display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid var(--mist); }
-    .marketing-item:last-child { border-bottom: 0; }
-    .mkt-icon { width: 2.5rem; height: 2.5rem; border: 1px solid var(--mist); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--red); transition: transform 0.25s, box-shadow 0.25s; }
-    .marketing-item:hover .mkt-icon { transform: translate(-4px, -4px); box-shadow: 4px 4px 0 var(--red); }
-    .mkt-title { font-size: 1.08rem; margin-bottom: 0.4rem; }
-    .mkt-desc { font-size: 0.86rem; color: #666; line-height: 1.75; }
-
-    #contact { background: var(--white); border-top: 1px solid var(--mist); }
-    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-    .contact-info p { color: #555; line-height: 1.85; max-width: 520px; }
-    .contact-details { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .contact-details a, .contact-details span { font-family: var(--ff-accent); font-size: 0.9rem; letter-spacing: 0.08em; color: var(--ink); border-bottom: 1px solid var(--mist); padding-bottom: 0.5rem; }
-    .contact-details a:hover { color: var(--red); }
-    .contact-form-wrap { border: 1px solid var(--mist); padding: clamp(1.5rem, 4vw, 3rem); background: var(--paper); }
-    #contact-form input, #contact-form select, #contact-form textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--mist); border-radius: 0; padding: 0.85rem 0; font-family: var(--ff-body); font-size: 0.9rem; color: var(--ink); margin-bottom: 1.25rem; outline: none; transition: border-color 0.2s; }
-    #contact-form input:focus, #contact-form select:focus, #contact-form textarea:focus { border-color: var(--ink); }
-    #contact-form textarea { resize: vertical; min-height: 9rem; }
-    #contact-form button { font-family: var(--ff-accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--ink); background: transparent; color: var(--ink); border-radius: 0; padding: 0.85rem 2.5rem; cursor: pointer; transition: background 0.25s, color 0.25s, opacity 0.25s; }
-    #contact-form button:hover { background: var(--ink); color: var(--paper); }
-    #contact-form button:disabled { opacity: 0.55; cursor: wait; }
-    #form-status { margin-top: 1rem; min-height: 1.25rem; font-family: var(--ff-accent); font-size: 0.8rem; letter-spacing: 0.05em; }
-
-    footer { background: var(--ink); color: var(--paper); padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 8vw, 8rem) 2.5rem; border-top: 1px solid rgba(214,208,196,0.15); }
-    .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; border-bottom: 1px solid rgba(214,208,196,0.15); padding-bottom: 3rem; margin-bottom: 2rem; }
-    .footer-brand-name { font-family: var(--ff-display); font-size: 2.5rem; font-weight: 800; letter-spacing: 0.08em; margin-bottom: 1rem; }
-    .footer-brand-name span { color: var(--red); }
-    .footer-brand-desc { font-size: 0.85rem; color: var(--mist); line-height: 1.8; max-width: 300px; margin-bottom: 1.4rem; }
-    .footer-contact { display: flex; flex-direction: column; gap: 0.45rem; font-family: var(--ff-accent); font-size: 0.82rem; letter-spacing: 0.08em; color: var(--gold); }
-    .footer-col h4 { font-family: var(--ff-accent); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 0.6rem; }
-    .footer-col a { font-size: 0.85rem; color: var(--mist); transition: color 0.2s; }
-    .footer-col a:hover, .footer-contact a:hover { color: var(--paper); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: var(--ff-accent); font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(214,208,196,0.55); }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes inkWipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
-    .reveal { animation: fadeUp 0.7s ease both; }
-    .reveal:nth-child(2) { animation-delay: 0.15s; }
-    .reveal:nth-child(3) { animation-delay: 0.30s; }
-    .scroll-reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .scroll-reveal.in-view { opacity: 1; transform: none; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-    }
-    @media (max-width: 900px) {
-      nav { grid-template-columns: auto 1fr auto; }
-      .nav-contact { display: none; }
-      .services-grid, .hosting-grid { grid-template-columns: 1fr; }
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-      #about, .marketing-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      section { padding: clamp(4.5rem, 9vw, 6rem) clamp(1.25rem, 6vw, 2rem); }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .about-deco { grid-template-columns: 1fr; }
-      .contact-layout { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      nav { grid-template-columns: auto 1fr auto; padding: 0.85rem 1rem; }
-      .nav-links, .nav-cta { display: none; }
-      .menu-toggle { display: block; justify-self: end; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-ghost { width: 100%; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { align-items: flex-start; flex-direction: column; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="progress"></div>
@@ -334,243 +116,301 @@
         <p>Search, social, paid media and email campaigns shaped around measurable outcomes instead of vanity traffic.</p>
         <ul class="service-list"><li>Search Engine Optimization</li><li>Pay-Per-Click Campaigns</li><li>Social Media Strategy</li><li>Email Marketing</li><li>Branding & Identity</li></ul>
       </article>
+  <div class="site-shell">
+    <div class="floating-particles" aria-hidden="true">
+      <span class="particle">は</span>
+      <span class="particle">ち</span>
+      <span class="particle">8</span>
+      <span class="particle">888</span>
+      <span class="particle particle--glow">は</span>
+      <span class="particle">ち</span>
+      <span class="particle particle--glow">8</span>
+      <span class="particle">は</span>
+      <span class="particle">ち</span>
+      <span class="particle">8</span>
+      <span class="particle particle--glow">888</span>
+      <span class="particle">は</span>
     </div>
-  </section>
 
-  <section id="work" class="scroll-reveal">
-    <div class="section-head">
-      <span class="section-count" aria-hidden="true">03</span>
-      <div class="section-label">Selected Work</div>
-      <h2 class="section-title">Projects that<br>speak for themselves.</h2>
-      <div class="section-rule"></div>
-      <p class="section-intro">Real project categories and production challenges represented with temporary gradient art until final screenshots are ready.</p>
-    </div>
-    <div class="portfolio-grid" aria-label="Selected project tiles">
-      <a class="portfolio-tile scroll-reveal" href="?service=Web%20Design%20%26%20Development#contact" data-service="Web Design & Development" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">E-commerce</span><span class="portfolio-tile-title">High Volume Retail Platform</span><span class="portfolio-tile-desc">Conversion-focused storefront architecture for catalog scale, campaigns and fast checkout paths.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Hosting%20%26%20Cloud#contact" data-service="Hosting & Cloud" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">High Availability</span><span class="portfolio-tile-title">66-Server Global Deploy</span><span class="portfolio-tile-desc">Distributed infrastructure planning for resilient uptime across global traffic patterns.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Web%20Design%20%26%20Development#contact" data-service="Web Design & Development" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">Mobile App</span><span class="portfolio-tile-title">Data Integration Suite</span><span class="portfolio-tile-desc">Mobile-first workflows connecting business data, reporting views and operational teams.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Web%20Design%20%26%20Development#contact" data-service="Web Design & Development" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">Web App</span><span class="portfolio-tile-title">Browser-based SaaS Platform</span><span class="portfolio-tile-desc">Interface systems and application screens for subscription software products.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Web%20Design%20%26%20Development#contact" data-service="Web Design & Development" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">Government</span><span class="portfolio-tile-title">Public Agency Portal</span><span class="portfolio-tile-desc">Accessible information architecture for public services, forms and citizen updates.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Web%20Design%20%26%20Development#contact" data-service="Web Design & Development" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">CMS</span><span class="portfolio-tile-title">Content Management System</span><span class="portfolio-tile-desc">Editorial publishing workflows with structured content, approvals and reusable templates.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=SEO%20%26%20Marketing#contact" data-service="SEO & Marketing" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">Community</span><span class="portfolio-tile-title">National-Scale Network</span><span class="portfolio-tile-desc">Growth-oriented community platform design for national member engagement.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Web%20Design%20%26%20Development#contact" data-service="Web Design & Development" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">Video</span><span class="portfolio-tile-title">On-site Video Application</span><span class="portfolio-tile-desc">Media delivery experience with guided content, calls to action and performance-minded UX.</span></div></a>
-      <a class="portfolio-tile scroll-reveal" href="?service=Full%20Package#contact" data-service="Full Package" onclick="prefillForm(this); return false;"><div class="portfolio-tile-bg"></div><div class="portfolio-tile-overlay"><span class="portfolio-tile-label">Automotive</span><span class="portfolio-tile-title">Luxury Brand Digital</span><span class="portfolio-tile-desc">High-polish digital presence for premium inventory, brand storytelling and lead generation.</span></div></a>
-    </div>
-  </section>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#hero" aria-label="Dio's Agency home">
+          <span class="brand__mark">8</span>
+          <span>DIO'S <b>AGENCY</b></span>
+        </a>
 
-  <section id="about" class="scroll-reveal">
-    <div>
-      <div class="section-head">
-        <span class="section-count" aria-hidden="true">04</span>
-        <div class="section-label">About Dio</div>
-        <h2 class="section-title">Editorial restraint.<br>Production discipline.</h2>
-        <div class="section-rule"></div>
-      </div>
-      <p>Dios.agency is built for organizations that need more than a pretty homepage. Every project is treated as a business system: positioned clearly, designed with intent, coded for speed and supported after launch.</p>
-      <p>The aesthetic is minimal, sharp and durable — influenced by Japanese editorial rhythm, ink-brush contrast and practical engineering that stands up under real traffic.</p>
-    </div>
-    <div class="about-deco" aria-label="Studio statistics">
-      <div class="about-stat"><span class="about-stat-num">12+</span><span class="about-stat-label">Years</span></div>
-      <div class="about-stat"><span class="about-stat-num">200+</span><span class="about-stat-label">Projects</span></div>
-      <div class="about-stat"><span class="about-stat-num">99.9%</span><span class="about-stat-label">Uptime</span></div>
-      <div class="about-stat"><span class="about-stat-num">40+</span><span class="about-stat-label">Countries</span></div>
-    </div>
-  </section>
+        <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" data-nav-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-  <section id="hosting" class="scroll-reveal">
-    <span class="vertical-mark" aria-hidden="true">雲 基盤 保守</span>
-    <div class="section-head">
-      <span class="section-count" aria-hidden="true">05</span>
-      <div class="section-label">Infrastructure</div>
-      <h2 class="section-title">Hosting plans.<br>Calm under pressure.</h2>
-      <div class="section-rule"></div>
-      <p class="section-intro">Choose a clear starting point, then scale into cloud, dedicated or hybrid infrastructure as the business grows.</p>
-    </div>
-    <div class="hosting-grid">
-      <article class="hosting-card scroll-reveal"><div class="hosting-tier">Starter</div><div class="hosting-name">Starter</div><div class="hosting-price">$9<span>/mo</span></div><ul class="hosting-features"><li>Shared hosting foundation</li><li>5 GB storage</li><li>Free SSL certificate</li><li>Email accounts</li><li>99.9% uptime target</li></ul><a class="hosting-button" href="#contact">Get Started</a></article>
-      <article class="hosting-card featured scroll-reveal"><div class="hosting-tier">Most Popular</div><div class="hosting-name">Cloud</div><div class="hosting-price">$49<span>/mo</span></div><ul class="hosting-features"><li>Cloud server with 2 vCPU</li><li>40 GB SSD storage</li><li>Global CDN setup</li><li>Daily backups</li><li>Priority support</li></ul><a class="hosting-button" href="#contact">Get Started</a></article>
-      <article class="hosting-card scroll-reveal"><div class="hosting-tier">Enterprise</div><div class="hosting-name">Dedicated</div><div class="hosting-price">$249<span>/mo</span></div><ul class="hosting-features"><li>Dedicated managed server</li><li>1 TB storage</li><li>Custom configuration</li><li>24/7 monitoring</li><li>Hybrid cloud option</li></ul><a class="hosting-button" href="#contact">Get Started</a></article>
-    </div>
-  </section>
-
-  <section id="marketing" class="scroll-reveal">
-    <div class="section-head">
-      <span class="section-count" aria-hidden="true">06</span>
-      <div class="section-label">Digital Marketing</div>
-      <h2 class="section-title">Sales & marketing.<br>Measured results.</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="marketing-layout">
-      <div>
-        <article class="marketing-item scroll-reveal"><div class="mkt-icon" aria-hidden="true">◎</div><div><div class="mkt-title">Search Engine Optimization</div><div class="mkt-desc">Technical SEO, content systems and local visibility that help qualified buyers find you first.</div></div></article>
-        <article class="marketing-item scroll-reveal"><div class="mkt-icon" aria-hidden="true">▷</div><div><div class="mkt-title">Pay-Per-Click Management</div><div class="mkt-desc">Precise paid search campaigns built around conversion tracking, landing pages and spend discipline.</div></div></article>
-        <article class="marketing-item scroll-reveal"><div class="mkt-icon" aria-hidden="true">◈</div><div><div class="mkt-title">Social Media Strategy</div><div class="mkt-desc">Editorial calendars, campaign creative and platform-specific messaging to keep the brand present.</div></div></article>
-      </div>
-      <div>
-        <article class="marketing-item scroll-reveal"><div class="mkt-icon" aria-hidden="true">✉</div><div><div class="mkt-title">Email Marketing</div><div class="mkt-desc">Automation, segmentation and campaign reporting for repeatable customer communication.</div></div></article>
-        <article class="marketing-item scroll-reveal"><div class="mkt-icon" aria-hidden="true">◇</div><div><div class="mkt-title">Branding & Identity</div><div class="mkt-desc">Identity systems that bring visual consistency to web, social, sales and support touchpoints.</div></div></article>
-        <article class="marketing-item scroll-reveal"><div class="mkt-icon" aria-hidden="true">⊕</div><div><div class="mkt-title">Webmaster & Assessments</div><div class="mkt-desc">Post-launch care, analytics reviews, reputation monitoring and improvement roadmaps.</div></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="scroll-reveal">
-    <div class="contact-layout">
-      <div class="contact-info">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Let's build<br>something real.</h2>
-        <div class="section-rule"></div>
-        <p>Ready to start? Send your project details and I'll respond within 24 hours. For direct contact, use the email and phone below.</p>
-        <div class="contact-details">
-          <a href="mailto:eight888studios@gmail.com">Email: eight888studios@gmail.com</a>
-          <a href="tel:+1YOURNUMBER">Phone: [ADD YOUR NUMBER]</a>
-          <span>Domain: dios.agency</span>
-          <span>Location: [ADD YOUR CITY] × Global</span>
+        <div class="nav__links" data-nav-menu>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+          <a class="nav__cta" href="#contact">Book Free Consult</a>
         </div>
-      </div>
-      <div class="contact-form-wrap">
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="your@email.com" required>
-          <select name="service">
-            <option value="">— Select a Service —</option>
-            <option>Web Design & Development</option>
-            <option>Hosting & Cloud</option>
-            <option>SEO & Marketing</option>
-            <option>Full Package</option>
-          </select>
-          <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
-          <button type="submit" id="form-submit">Send Project Request</button>
-          <div id="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </div>
-  </section>
+      </nav>
+    </header>
 
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-name">DIO<span>S</span></div>
-        <p class="footer-brand-desc">Award-winning web design, development and digital marketing. Precision-crafted for businesses that want to grow.</p>
-        <div class="footer-contact">
-          <a href="mailto:eight888studios@gmail.com">eight888studios@gmail.com</a>
-          <span>[ADD YOUR NUMBER]</span>
-          <span>dios.agency</span>
-          <span>[ADD YOUR CITY] × Global</span>
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Websites · Link Pages · Digital Systems</p>
+          <h1>Look official online without overcomplicating it.</h1>
+          <p class="hero__lead">Dio's Agency builds clean, fast websites for creators, local businesses, clothing brands, service providers, and anyone who needs a sharper online presence.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#contact">Book a Free Consult</a>
+            <a class="button button--ghost" href="#pricing">View Starter Plans</a>
+          </div>
+          <div class="hero__proof" aria-label="Agency highlights">
+            <span><strong>$10/mo</strong> starter option</span>
+            <span><strong>Mobile-first</strong> builds</span>
+            <span><strong>Fast</strong> launch support</span>
+          </div>
         </div>
+
+        <aside class="offer-card reveal reveal--delay" aria-label="Starter offer preview">
+          <p class="offer-card__label">Starter offer</p>
+          <h2>Starter Web Presence</h2>
+          <p class="offer-card__price">From <span>$10/mo</span></p>
+          <ul>
+            <li>Link-in-bio page</li>
+            <li>Mobile-friendly layout</li>
+            <li>Contact buttons</li>
+            <li>Social links</li>
+            <li>Fast hosting included</li>
+          </ul>
+          <a class="button button--primary button--full" href="#contact">Start for $10/mo</a>
+        </aside>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What you can get</p>
+          <h2>Everything you need to look official online.</h2>
+        </div>
+        <div class="services-grid">
+          <article class="glass-card reveal">
+            <span class="card-num">01</span>
+            <h3>Link-in-Bio Pages</h3>
+            <p>Clean one-page hubs for Instagram, TikTok, music, fashion, services, booking links, and contact buttons.</p>
+            <small>Best for creators, artists, brands, and small businesses.</small>
+          </article>
+          <article class="glass-card reveal">
+            <span class="card-num">02</span>
+            <h3>Starter Websites</h3>
+            <p>Simple professional websites with sections for your brand, services, pricing, photos, and contact.</p>
+            <small>Best when you need more than a Linktree.</small>
+          </article>
+          <article class="glass-card reveal">
+            <span class="card-num">03</span>
+            <h3>Business Websites</h3>
+            <p>More complete websites for local companies, mobile services, restaurants, shops, and growing brands.</p>
+            <small>Best for trust, SEO, and better presentation.</small>
+          </article>
+          <article class="glass-card reveal">
+            <span class="card-num">04</span>
+            <h3>Forms, Booking & Updates</h3>
+            <p>Contact forms, service request forms, simple booking flows, menu updates, product pages, and ongoing changes.</p>
+            <small>Best for people who want their site maintained.</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing section" id="pricing">
+        <div class="section-heading section-heading--center reveal">
+          <p class="eyebrow">Simple plans</p>
+          <h2>Clear options. No enterprise buzzwords.</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <h3>Starter Plan</h3>
+            <p class="price">$10/mo</p>
+            <p class="price-subtitle">Link-in-bio style page</p>
+            <ul>
+              <li>Custom branded landing page</li>
+              <li>Social buttons</li>
+              <li>Contact button</li>
+              <li>Mobile-first layout</li>
+              <li>Basic updates</li>
+              <li>Hosting included</li>
+            </ul>
+            <a class="button button--ghost button--full" href="#contact">Start Starter Plan</a>
+          </article>
+          <article class="price-card price-card--featured reveal">
+            <span class="badge">Popular</span>
+            <h3>Website Build</h3>
+            <p class="price">Custom quote</p>
+            <p class="price-subtitle">Full website design</p>
+            <ul>
+              <li>Multi-section homepage</li>
+              <li>Service/pricing sections</li>
+              <li>Contact form</li>
+              <li>Mobile responsive</li>
+              <li>SEO-ready structure</li>
+              <li>Launch support</li>
+            </ul>
+            <a class="button button--primary button--full" href="#contact">Request Website Quote</a>
+          </article>
+          <article class="price-card reveal">
+            <h3>Monthly Care</h3>
+            <p class="price">From $25/mo</p>
+            <p class="price-subtitle">Updates and support</p>
+            <ul>
+              <li>Text/photo updates</li>
+              <li>Button/link changes</li>
+              <li>Website checks</li>
+              <li>Small design edits</li>
+              <li>Support after launch</li>
+            </ul>
+            <a class="button button--ghost button--full" href="#contact">Ask About Care Plan</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="work section" id="work">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Project types</p>
+          <h2>Projects that speak for themselves.</h2>
+        </div>
+        <div class="project-filters reveal" aria-label="Filter project examples">
+          <button class="filter-chip is-active" type="button" data-filter="All">All</button>
+          <button class="filter-chip" type="button" data-filter="Link Pages">Link Pages</button>
+          <button class="filter-chip" type="button" data-filter="Clothing Brands">Clothing Brands</button>
+          <button class="filter-chip" type="button" data-filter="Local Services">Local Services</button>
+          <button class="filter-chip" type="button" data-filter="Automotive">Automotive</button>
+          <button class="filter-chip" type="button" data-filter="Restaurants">Restaurants</button>
+          <button class="filter-chip" type="button" data-filter="Events">Events</button>
+          <button class="filter-chip" type="button" data-filter="E-commerce">E-commerce</button>
+          <button class="filter-chip" type="button" data-filter="Community Pages">Community Pages</button>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal" data-category="Link Pages">
+            <h3>Creator Link Page</h3>
+            <p>A mobile-first page with social links, booking/contact buttons, music/fashion links, and a clean personal brand layout.</p>
+            <span>Link Pages</span>
+          </article>
+          <article class="project-card reveal" data-category="Local Services">
+            <h3>Local Service Website</h3>
+            <p>A simple business site for a service provider with pricing, contact form, service area, and trust-building sections.</p>
+            <span>Local Services</span>
+          </article>
+          <article class="project-card reveal" data-category="Clothing Brands">
+            <h3>Clothing Brand Page</h3>
+            <p>A fashion-focused landing page with product highlights, drop info, photos, and social traffic conversion.</p>
+            <span>Clothing Brands</span>
+          </article>
+          <article class="project-card reveal" data-category="Automotive">
+            <h3>Automotive Service Page</h3>
+            <p>A clean page for mechanics, detailers, mobile repair, or car services with service forms and direct contact.</p>
+            <span>Automotive</span>
+          </article>
+          <article class="project-card reveal" data-category="Community Pages">
+            <h3>Event / Community Page</h3>
+            <p>A landing page for signups, flyers, event details, forms, and community announcements.</p>
+            <span>Community Pages</span>
+          </article>
+          <article class="project-card reveal" data-category="Restaurants">
+            <h3>Restaurant Menu Page</h3>
+            <p>A compact restaurant page with menu highlights, hours, location, social links, and fast contact options.</p>
+            <span>Restaurants</span>
+          </article>
+          <article class="project-card reveal" data-category="Events">
+            <h3>Event Landing Page</h3>
+            <p>A flyer-style page for tickets, RSVPs, event details, announcements, and shareable promo links.</p>
+            <span>Events</span>
+          </article>
+          <article class="project-card reveal" data-category="E-commerce">
+            <h3>Small Shop Launch</h3>
+            <p>A focused product page for drops, featured items, payment links, and social traffic conversion.</p>
+            <span>E-commerce</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="about section">
+        <div class="about-panel reveal">
+          <div>
+            <p class="eyebrow">Built by Dio</p>
+            <h2>Designed to make you look official.</h2>
+            <p>Dio's Agency is a small web design studio focused on clean websites, strong presentation, and practical digital tools. The goal is simple: make your brand easier to trust, easier to contact, and easier to share.</p>
+          </div>
+          <div class="about-stats">
+            <span>⚡ <b>Fast Launches</b></span>
+            <span>📱 <b>Mobile-First</b></span>
+            <span>✨ <b>Built for Real People</b></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="section-heading section-heading--center reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build something real.</h2>
+        </div>
+        <div class="contact-grid reveal">
+          <form class="contact-form">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              <span>Phone <em>(optional)</em></span>
+              <input type="tel" name="phone" placeholder="Phone number">
+            </label>
+            <label>
+              <span>What do you need?</span>
+              <select name="service" required>
+                <option value="">Choose one</option>
+                <option>$10/mo Starter Link Page</option>
+                <option>Full Website</option>
+                <option>Website Updates</option>
+                <option>Business / Brand Page</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="contact-form__message">
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="Tell me what you're building."></textarea>
+            </label>
+            <button class="button button--primary" type="submit">Send Project Request</button>
+            <p class="form-note" data-form-note aria-live="polite"></p>
+          </form>
+
+          <aside class="quick-contact">
+            <h3>Quick Contact</h3>
+            <a href="mailto:eight888studios@gmail.com"><span>📧</span>Email</a>
+            <a href="https://instagram.com/diosagency"><span>📸</span>Instagram</a>
+            <a href="#contact"><span>📅</span>Book Free Consult</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand" href="#hero" aria-label="Dio's Agency home">
+          <span class="brand__mark">8</span>
+          <span>DIO'S <b>AGENCY</b></span>
+        </a>
+        <p>Websites, link pages, and digital systems for creators, local businesses, and brands.</p>
       </div>
-      <div class="footer-col"><h4>Development</h4><ul><li><a href="#services">Design & Development</a></li><li><a href="#services">Custom Solutions</a></li><li><a href="#services">Open Source Apps</a></li><li><a href="#work">Client Portfolio</a></li></ul></div>
-      <div class="footer-col"><h4>Hosting</h4><ul><li><a href="#hosting">Hosting Plans</a></li><li><a href="#hosting">Cloud Computing</a></li><li><a href="#hosting">Dedicated Servers</a></li><li><a href="#hosting">Global Datacenters</a></li></ul></div>
-      <div class="footer-col"><h4>Marketing</h4><ul><li><a href="#marketing">SEO & SEM</a></li><li><a href="#marketing">Social Media</a></li><li><a href="#marketing">PPC Management</a></li><li><a href="#marketing">Email Marketing</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Dios Web Studio · dios.agency · All Rights Reserved.</span>
-      <span>eight888studios@gmail.com</span>
-    </div>
-  </footer>
-
-  <script>
-    const CONTACT_EMAIL = 'eight888studios@gmail.com';
-    const CONTACT_EMAIL_LINK = `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`;
-
-    function prefillForm(tile) {
-      const service = tile.getAttribute('data-service');
-      const select = document.querySelector('#contact-form select[name="service"]');
-      if (select) select.value = service;
-      const params = new URLSearchParams(window.location.search);
-      params.set('service', service);
-      const nextUrl = window.location.pathname + '?' + params.toString() + '#contact';
-      window.history.replaceState({}, '', nextUrl);
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
-
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileBackdrop = document.getElementById('mobile-backdrop');
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      mobileBackdrop.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      mobileBackdrop.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', mobileMenu.classList.contains('open') ? 'true' : 'false');
-    });
-    mobileBackdrop.addEventListener('click', closeMobileMenu);
-    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-
-    window.addEventListener('scroll', () => {
-      const scrollable = document.body.scrollHeight - window.innerHeight;
-      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-      document.getElementById('progress').style.width = pct + '%';
-    });
-
-    const serviceParam = new URLSearchParams(window.location.search).get('service');
-    if (serviceParam) {
-      const select = document.querySelector('#contact-form select[name="service"]');
-      if (select && Array.from(select.options).some(option => option.value === serviceParam)) select.value = serviceParam;
-    }
-
-    async function notifyFormError(form, errorMessage) {
-      const data = Object.fromEntries(new FormData(form).entries());
-      data.error_message = errorMessage;
-      data.page = window.location.href;
-      data.user_agent = navigator.userAgent;
-
-      try {
-        await fetch('/api/contact-error', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data),
-          keepalive: true
-        });
-      } catch {
-        /* The inline mailto fallback below remains visible if the SMTP alert endpoint is unavailable. */
-      }
-    }
-
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('form-submit');
-      const status = document.getElementById('form-status');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const formData = new FormData(this);
-        formData.append('_subject', 'New Dios Web Design project request');
-
-        const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData
-        });
-
-        if (res.ok) {
-          status.textContent = `✓ Message sent to ${CONTACT_EMAIL}. I'll be in touch within 24 hours.`;
-          status.style.color = '#c9a84c';
-          this.reset();
-        } else {
-          const message = `Formspree rejected the request with status ${res.status}.`;
-          status.innerHTML = `✗ Something went wrong. Email me directly: ${CONTACT_EMAIL_LINK}`;
-          status.style.color = '#c0392b';
-          notifyFormError(this, message);
-        }
-      } catch (error) {
-        status.innerHTML = `✗ Network error. Email me directly: ${CONTACT_EMAIL_LINK}`;
-        status.style.color = '#c0392b';
-        notifyFormError(this, error && error.message ? error.message : 'Network error while submitting the contact form.');
-      } finally {
-        btn.textContent = 'Send Project Request';
-        btn.disabled = false;
-      }
-    });
-  </script>
+      <nav aria-label="Footer navigation">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="footer__email" href="mailto:eight888studios@gmail.com">eight888studios@gmail.com</a>
+    </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
