@@ -2,415 +2,346 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dio's Agency | Websites, Link Pages & Digital Systems</title>
-  <meta name="description" content="Dio's Agency builds clean, fast websites, link-in-bio pages, and digital systems for creators, local businesses, clothing brands, and service providers.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dio's Agency - Websites, Link Pages & Digital Systems</title>
+  <meta name="description" content="Dio's Agency builds clean, fast websites for creators, local businesses, clothing brands, and service providers. From $10/mo.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="progress"></div>
-
+  <!-- Floating Particles Background -->
   <div class="floating-particles" aria-hidden="true">
     <span class="particle">は</span>
     <span class="particle">ち</span>
-    <span class="particle">八</span>
-    <span class="particle">〇</span>
-    <span class="particle">デ</span>
-    <span class="particle">ィ</span>
-    <span class="particle">オ</span>
-    <span class="particle">ス</span>
-    <span class="particle">光</span>
-    <span class="particle">匠</span>
-    <span class="particle">和</span>
-    <span class="particle">静</span>
-    <span class="particle particle--glow">はち</span>
-    <span class="particle particle--glow">はち</span>
+    <span class="particle">8</span>
+    <span class="particle">888</span>
+    <span class="particle glow">は</span>
+    <span class="particle">ち</span>
+    <span class="particle glow">8</span>
+    <span class="particle">は</span>
+    <span class="particle">ち</span>
+    <span class="particle">8</span>
+    <span class="particle glow">888</span>
+    <span class="particle">は</span>
   </div>
 
-  <nav aria-label="Primary navigation">
-    <a href="#hero" class="nav-logo" aria-label="Dios home">DIO<span>S</span></a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#hosting">Hosting</a></li>
-      <li><a href="#marketing">Marketing</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <span class="nav-contact">eight888studios@gmail.com</span>
-    <a href="#contact" class="nav-cta">Start a Project</a>
-    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </nav>
-
-
-  <nav aria-label="Primary navigation">
-    <a href="#hero" class="nav-logo" aria-label="Dios home">DIO<span>S</span></a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#hosting">Hosting</a></li>
-      <li><a href="#marketing">Marketing</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <span class="nav-contact">eight888studios@gmail.com</span>
-    <a href="#contact" class="nav-cta">Start a Project</a>
-    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </nav>
-
-  <div class="mobile-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
-  <aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="#work">Work</a>
-    <a href="#services">Services</a>
-    <a href="#hosting">Hosting</a>
-    <a href="#marketing">Marketing</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact">Start a Project</a>
-    <small>eight888studios@gmail.com</small>
-  </aside>
-
-  <section id="hero" class="scroll-reveal">
-    <svg class="grain" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" aria-hidden="true">
-      <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-      <rect width="100%" height="100%" filter="url(#noise)" opacity="0.06"/>
-    </svg>
-    <span class="vert-text" aria-hidden="true">ウェブデザイン · 開発 · ホスティング</span>
-    <div class="hero-inner">
-      <p class="hero-label reveal">Dio's Web Design Studio — [ADD YOUR CITY] × Global</p>
-      <h1 class="hero-title">Craft that<br><em>performs.</em></h1>
-      <p class="hero-sub reveal">Award-winning web design, development, hosting and marketing. Japanese-crafted precision for global brands that need speed, clarity and measurable growth.</p>
-      <div class="hero-actions reveal">
-        <a class="btn-primary" href="#work">View Work</a>
-        <a class="btn-ghost" href="#contact">Book a free consult</a>
+  <!-- Sticky Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-logo">
+        DIO'S <span class="red">AGENCY</span>
       </div>
-    </div>
-    <span class="bg-num" aria-hidden="true">01</span>
-  </section>
 
-  <section id="services" class="scroll-reveal">
-    <span class="vertical-mark" aria-hidden="true">設計 開発 成長</span>
-    <div class="section-head">
-      <span class="section-count" aria-hidden="true">02</span>
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Full-spectrum<br>digital solutions.</h2>
-      <div class="section-rule"></div>
-      <p class="section-intro">A focused studio model for brands that want a single expert partner across strategy, interface design, production code, cloud operations and customer acquisition.</p>
-    </div>
-    <div class="services-grid">
-      <article class="service-card scroll-reveal">
-        <span class="service-num">01</span>
-        <h3>Design & Development</h3>
-        <p>From concept to launch — websites, applications and ecommerce systems built to convert, scale and endure.</p>
-        <ul class="service-list"><li>Custom Web Design</li><li>Application Development</li><li>Ecommerce & Big Data</li><li>Mobile Design</li><li>Open Source Applications</li></ul>
-      </article>
-      <article class="service-card scroll-reveal">
-        <span class="service-num">02</span>
-        <h3>Hosting & Cloud</h3>
-        <p>Managed infrastructure with 99.9% uptime targets, global datacenters, backups and monitoring for reliable production launches.</p>
-        <ul class="service-list"><li>Cloud Servers</li><li>Hybrid Clouds</li><li>Dedicated & Managed Servers</li><li>Economy Hosting</li><li>Global Datacenters</li></ul>
-      </article>
-      <article class="service-card scroll-reveal">
-        <span class="service-num">03</span>
-        <h3>SEO & Marketing</h3>
-        <p>Search, social, paid media and email campaigns shaped around measurable outcomes instead of vanity traffic.</p>
-        <ul class="service-list"><li>Search Engine Optimization</li><li>Pay-Per-Click Campaigns</li><li>Social Media Strategy</li><li>Email Marketing</li><li>Branding & Identity</li></ul>
-      </article>
-  <div class="site-shell">
-    <div class="floating-particles" aria-hidden="true">
-      <span class="particle">は</span>
-      <span class="particle">ち</span>
-      <span class="particle">8</span>
-      <span class="particle">888</span>
-      <span class="particle particle--glow">は</span>
-      <span class="particle">ち</span>
-      <span class="particle particle--glow">8</span>
-      <span class="particle">は</span>
-      <span class="particle">ち</span>
-      <span class="particle">8</span>
-      <span class="particle particle--glow">888</span>
-      <span class="particle">は</span>
-    </div>
+      <button class="nav-mobile-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <header class="site-header" data-header>
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#hero" aria-label="Dio's Agency home">
-          <span class="brand__mark">8</span>
-          <span>DIO'S <b>AGENCY</b></span>
-        </a>
-
-        <button class="nav__toggle" type="button" aria-label="Toggle menu" aria-expanded="false" data-nav-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav__links" data-nav-menu>
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-          <a class="nav__cta" href="#contact">Book Free Consult</a>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero section" id="hero">
-        <div class="hero__content reveal">
-          <p class="eyebrow">Websites · Link Pages · Digital Systems</p>
-          <h1>Look official online without overcomplicating it.</h1>
-          <p class="hero__lead">Dio's Agency builds clean, fast websites for creators, local businesses, clothing brands, service providers, and anyone who needs a sharper online presence.</p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#contact">Book a Free Consult</a>
-            <a class="button button--ghost" href="#pricing">View Starter Plans</a>
-          </div>
-          <div class="hero__proof" aria-label="Agency highlights">
-            <span><strong>$10/mo</strong> starter option</span>
-            <span><strong>Mobile-first</strong> builds</span>
-            <span><strong>Fast</strong> launch support</span>
-          </div>
-        </div>
-
-        <aside class="offer-card reveal reveal--delay" aria-label="Starter offer preview">
-          <p class="offer-card__label">Starter offer</p>
-          <h2>Starter Web Presence</h2>
-          <p class="offer-card__price">From <span>$10/mo</span></p>
-          <ul>
-            <li>Link-in-bio page</li>
-            <li>Mobile-friendly layout</li>
-            <li>Contact buttons</li>
-            <li>Social links</li>
-            <li>Fast hosting included</li>
-          </ul>
-          <a class="button button--primary button--full" href="#contact">Start for $10/mo</a>
-        </aside>
-      </section>
-
-      <section class="services section" id="services">
-        <div class="section-heading reveal">
-          <p class="eyebrow">What you can get</p>
-          <h2>Everything you need to look official online.</h2>
-        </div>
-        <div class="services-grid">
-          <article class="glass-card reveal">
-            <span class="card-num">01</span>
-            <h3>Link-in-Bio Pages</h3>
-            <p>Clean one-page hubs for Instagram, TikTok, music, fashion, services, booking links, and contact buttons.</p>
-            <small>Best for creators, artists, brands, and small businesses.</small>
-          </article>
-          <article class="glass-card reveal">
-            <span class="card-num">02</span>
-            <h3>Starter Websites</h3>
-            <p>Simple professional websites with sections for your brand, services, pricing, photos, and contact.</p>
-            <small>Best when you need more than a Linktree.</small>
-          </article>
-          <article class="glass-card reveal">
-            <span class="card-num">03</span>
-            <h3>Business Websites</h3>
-            <p>More complete websites for local companies, mobile services, restaurants, shops, and growing brands.</p>
-            <small>Best for trust, SEO, and better presentation.</small>
-          </article>
-          <article class="glass-card reveal">
-            <span class="card-num">04</span>
-            <h3>Forms, Booking & Updates</h3>
-            <p>Contact forms, service request forms, simple booking flows, menu updates, product pages, and ongoing changes.</p>
-            <small>Best for people who want their site maintained.</small>
-          </article>
-        </div>
-      </section>
-
-      <section class="pricing section" id="pricing">
-        <div class="section-heading section-heading--center reveal">
-          <p class="eyebrow">Simple plans</p>
-          <h2>Clear options. No enterprise buzzwords.</h2>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card reveal">
-            <h3>Starter Plan</h3>
-            <p class="price">$10/mo</p>
-            <p class="price-subtitle">Link-in-bio style page</p>
-            <ul>
-              <li>Custom branded landing page</li>
-              <li>Social buttons</li>
-              <li>Contact button</li>
-              <li>Mobile-first layout</li>
-              <li>Basic updates</li>
-              <li>Hosting included</li>
-            </ul>
-            <a class="button button--ghost button--full" href="#contact">Start Starter Plan</a>
-          </article>
-          <article class="price-card price-card--featured reveal">
-            <span class="badge">Popular</span>
-            <h3>Website Build</h3>
-            <p class="price">Custom quote</p>
-            <p class="price-subtitle">Full website design</p>
-            <ul>
-              <li>Multi-section homepage</li>
-              <li>Service/pricing sections</li>
-              <li>Contact form</li>
-              <li>Mobile responsive</li>
-              <li>SEO-ready structure</li>
-              <li>Launch support</li>
-            </ul>
-            <a class="button button--primary button--full" href="#contact">Request Website Quote</a>
-          </article>
-          <article class="price-card reveal">
-            <h3>Monthly Care</h3>
-            <p class="price">From $25/mo</p>
-            <p class="price-subtitle">Updates and support</p>
-            <ul>
-              <li>Text/photo updates</li>
-              <li>Button/link changes</li>
-              <li>Website checks</li>
-              <li>Small design edits</li>
-              <li>Support after launch</li>
-            </ul>
-            <a class="button button--ghost button--full" href="#contact">Ask About Care Plan</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="work section" id="work">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Project types</p>
-          <h2>Projects that speak for themselves.</h2>
-        </div>
-        <div class="project-filters reveal" aria-label="Filter project examples">
-          <button class="filter-chip is-active" type="button" data-filter="All">All</button>
-          <button class="filter-chip" type="button" data-filter="Link Pages">Link Pages</button>
-          <button class="filter-chip" type="button" data-filter="Clothing Brands">Clothing Brands</button>
-          <button class="filter-chip" type="button" data-filter="Local Services">Local Services</button>
-          <button class="filter-chip" type="button" data-filter="Automotive">Automotive</button>
-          <button class="filter-chip" type="button" data-filter="Restaurants">Restaurants</button>
-          <button class="filter-chip" type="button" data-filter="Events">Events</button>
-          <button class="filter-chip" type="button" data-filter="E-commerce">E-commerce</button>
-          <button class="filter-chip" type="button" data-filter="Community Pages">Community Pages</button>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card reveal" data-category="Link Pages">
-            <h3>Creator Link Page</h3>
-            <p>A mobile-first page with social links, booking/contact buttons, music/fashion links, and a clean personal brand layout.</p>
-            <span>Link Pages</span>
-          </article>
-          <article class="project-card reveal" data-category="Local Services">
-            <h3>Local Service Website</h3>
-            <p>A simple business site for a service provider with pricing, contact form, service area, and trust-building sections.</p>
-            <span>Local Services</span>
-          </article>
-          <article class="project-card reveal" data-category="Clothing Brands">
-            <h3>Clothing Brand Page</h3>
-            <p>A fashion-focused landing page with product highlights, drop info, photos, and social traffic conversion.</p>
-            <span>Clothing Brands</span>
-          </article>
-          <article class="project-card reveal" data-category="Automotive">
-            <h3>Automotive Service Page</h3>
-            <p>A clean page for mechanics, detailers, mobile repair, or car services with service forms and direct contact.</p>
-            <span>Automotive</span>
-          </article>
-          <article class="project-card reveal" data-category="Community Pages">
-            <h3>Event / Community Page</h3>
-            <p>A landing page for signups, flyers, event details, forms, and community announcements.</p>
-            <span>Community Pages</span>
-          </article>
-          <article class="project-card reveal" data-category="Restaurants">
-            <h3>Restaurant Menu Page</h3>
-            <p>A compact restaurant page with menu highlights, hours, location, social links, and fast contact options.</p>
-            <span>Restaurants</span>
-          </article>
-          <article class="project-card reveal" data-category="Events">
-            <h3>Event Landing Page</h3>
-            <p>A flyer-style page for tickets, RSVPs, event details, announcements, and shareable promo links.</p>
-            <span>Events</span>
-          </article>
-          <article class="project-card reveal" data-category="E-commerce">
-            <h3>Small Shop Launch</h3>
-            <p>A focused product page for drops, featured items, payment links, and social traffic conversion.</p>
-            <span>E-commerce</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="about section">
-        <div class="about-panel reveal">
-          <div>
-            <p class="eyebrow">Built by Dio</p>
-            <h2>Designed to make you look official.</h2>
-            <p>Dio's Agency is a small web design studio focused on clean websites, strong presentation, and practical digital tools. The goal is simple: make your brand easier to trust, easier to contact, and easier to share.</p>
-          </div>
-          <div class="about-stats">
-            <span>⚡ <b>Fast Launches</b></span>
-            <span>📱 <b>Mobile-First</b></span>
-            <span>✨ <b>Built for Real People</b></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section" id="contact">
-        <div class="section-heading section-heading--center reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Let's build something real.</h2>
-        </div>
-        <div class="contact-grid reveal">
-          <form class="contact-form">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" placeholder="Your name" required>
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" placeholder="you@example.com" required>
-            </label>
-            <label>
-              <span>Phone <em>(optional)</em></span>
-              <input type="tel" name="phone" placeholder="Phone number">
-            </label>
-            <label>
-              <span>What do you need?</span>
-              <select name="service" required>
-                <option value="">Choose one</option>
-                <option>$10/mo Starter Link Page</option>
-                <option>Full Website</option>
-                <option>Website Updates</option>
-                <option>Business / Brand Page</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label class="contact-form__message">
-              <span>Message</span>
-              <textarea name="message" rows="4" placeholder="Tell me what you're building."></textarea>
-            </label>
-            <button class="button button--primary" type="submit">Send Project Request</button>
-            <p class="form-note" data-form-note aria-live="polite"></p>
-          </form>
-
-          <aside class="quick-contact">
-            <h3>Quick Contact</h3>
-            <a href="mailto:eight888studios@gmail.com"><span>📧</span>Email</a>
-            <a href="https://instagram.com/diosagency"><span>📸</span>Instagram</a>
-            <a href="#contact"><span>📅</span>Book Free Consult</a>
-          </aside>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div>
-        <a class="brand" href="#hero" aria-label="Dio's Agency home">
-          <span class="brand__mark">8</span>
-          <span>DIO'S <b>AGENCY</b></span>
-        </a>
-        <p>Websites, link pages, and digital systems for creators, local businesses, and brands.</p>
-      </div>
-      <nav aria-label="Footer navigation">
+      <div class="nav-links" id="navLinks">
         <a href="#work">Work</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
-      </nav>
-      <a class="footer__email" href="mailto:eight888studios@gmail.com">eight888studios@gmail.com</a>
-    </footer>
-  </div>
+        <a href="#contact" class="nav-cta">Book Free Consult</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Websites, link pages, and digital systems that make you look <span class="red">official</span>.
+        </h1>
+
+        <p class="hero-subtitle">
+          Dio's Agency builds clean, fast websites for creators, local businesses, clothing brands, service providers, and anyone who needs a professional online presence without overcomplicating it.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="button button-primary">Book a Free Consult</a>
+          <a href="#pricing" class="button button-secondary">View Starter Plans</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-label">STARTER OFFER</div>
+        <h3 class="hero-card-title">Starter Web Presence</h3>
+        <div class="hero-card-price">From <span class="red">$10/mo</span></div>
+
+        <ul class="hero-card-features">
+          <li>Link-in-bio page</li>
+          <li>Mobile-friendly design</li>
+          <li>Contact buttons</li>
+          <li>Social links</li>
+          <li>Fast hosting</li>
+        </ul>
+
+        <a href="#pricing" class="button button-primary-small">Start for $10/mo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Everything you need to look <span class="red">official online</span>.</h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Link-in-Bio Pages</h3>
+          <p class="service-description">Clean one-page hubs for Instagram, TikTok, music, fashion, services, booking links, and contact buttons.</p>
+          <div class="service-best-for">
+            <span class="label">Best for:</span>
+            <span>Creators, artists, brands, small businesses</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Starter Websites</h3>
+          <p class="service-description">Simple professional websites with sections for your brand, services, pricing, photos, and contact.</p>
+          <div class="service-best-for">
+            <span class="label">Best for:</span>
+            <span>People who need more than a Linktree</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Business Websites</h3>
+          <p class="service-description">More complete websites for local companies, mobile services, restaurants, shops, and growing brands.</p>
+          <div class="service-best-for">
+            <span class="label">Best for:</span>
+            <span>Businesses that need trust, SEO, and better presentation</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <h3>Forms, Booking & Updates</h3>
+          <p class="service-description">Contact forms, service request forms, simple booking flows, menu updates, product pages, and ongoing site changes.</p>
+          <div class="service-best-for">
+            <span class="label">Best for:</span>
+            <span>People who want their site maintained</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Simple <span class="red">plans</span>.</h2>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="pricing-name">Starter Plan</h3>
+          <div class="pricing-price">$10/mo</div>
+          <div class="pricing-subtitle">Link-in-bio style page</div>
+
+          <ul class="pricing-features">
+            <li>Custom branded landing page</li>
+            <li>Social buttons</li>
+            <li>Contact button</li>
+            <li>Mobile-first layout</li>
+            <li>Basic updates</li>
+            <li>Hosting included</li>
+          </ul>
+
+          <a href="#contact" class="button button-primary-small">Start Starter Plan</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">POPULAR</div>
+          <h3 class="pricing-name">Website Build</h3>
+          <div class="pricing-price">Custom quote</div>
+          <div class="pricing-subtitle">Full website design</div>
+
+          <ul class="pricing-features">
+            <li>Multi-section homepage</li>
+            <li>Service/pricing sections</li>
+            <li>Contact form</li>
+            <li>Mobile responsive</li>
+            <li>SEO-ready structure</li>
+            <li>Launch support</li>
+          </ul>
+
+          <a href="#contact" class="button button-primary-small">Request Website Quote</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3 class="pricing-name">Monthly Care</h3>
+          <div class="pricing-price">From $25/mo</div>
+          <div class="pricing-subtitle">Updates and support</div>
+
+          <ul class="pricing-features">
+            <li>Text/photo updates</li>
+            <li>Button/link changes</li>
+            <li>Website checks</li>
+            <li>Small design edits</li>
+            <li>Support after launch</li>
+          </ul>
+
+          <a href="#contact" class="button button-primary-small">Ask About Care Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="work" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects that speak for <span class="red">themselves</span>.</h2>
+
+      <div class="project-filters">
+        <button class="filter-chip active" onclick="filterProjects('All')">All</button>
+        <button class="filter-chip" onclick="filterProjects('Link Pages')">Link Pages</button>
+        <button class="filter-chip" onclick="filterProjects('Clothing Brands')">Clothing Brands</button>
+        <button class="filter-chip" onclick="filterProjects('Local Services')">Local Services</button>
+        <button class="filter-chip" onclick="filterProjects('Automotive')">Automotive</button>
+        <button class="filter-chip" onclick="filterProjects('Restaurants')">Restaurants</button>
+        <button class="filter-chip" onclick="filterProjects('Events')">Events</button>
+        <button class="filter-chip" onclick="filterProjects('E-commerce')">E-commerce</button>
+        <button class="filter-chip" onclick="filterProjects('Community Pages')">Community Pages</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project-card" data-category="Link Pages">
+          <h3>Creator Link Page</h3>
+          <p>A mobile-first page with social links, booking/contact buttons, music/fashion links, and a clean personal brand layout.</p>
+          <span class="project-category">Link Pages</span>
+        </div>
+
+        <div class="project-card" data-category="Local Services">
+          <h3>Local Service Website</h3>
+          <p>A simple business site for a service provider with pricing, contact form, service area, and trust-building sections.</p>
+          <span class="project-category">Local Services</span>
+        </div>
+
+        <div class="project-card" data-category="Clothing Brands">
+          <h3>Clothing Brand Page</h3>
+          <p>A fashion-focused landing page with product highlights, drop info, photos, and social traffic conversion.</p>
+          <span class="project-category">Clothing Brands</span>
+        </div>
+
+        <div class="project-card" data-category="Automotive">
+          <h3>Automotive Service Page</h3>
+          <p>A clean page for mechanics, detailers, mobile repair, or car services with service forms and direct contact.</p>
+          <span class="project-category">Automotive</span>
+        </div>
+
+        <div class="project-card" data-category="Community Pages">
+          <h3>Event / Community Page</h3>
+          <p>A landing page for signups, flyers, event details, forms, and community announcements.</p>
+          <span class="project-category">Community Pages</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <h2 class="section-title">Built by Dio. Designed to make you look <span class="red">official</span>.</h2>
+
+      <p class="about-text">
+        Dio's Agency is a small web design studio focused on clean websites, strong presentation, and practical digital tools. The goal is simple: make your brand easier to trust, easier to contact, and easier to share.
+      </p>
+
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-label">Fast Launches</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📱</div>
+          <div class="stat-label">Mobile-First</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✨</div>
+          <div class="stat-label">Built for Real People</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Let's build something <span class="red">real</span>.</h2>
+
+      <div class="contact-wrapper">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" name="phone" placeholder="Phone (optional)">
+          </div>
+
+          <div class="form-group">
+            <select name="service" required>
+              <option value="">What do you need?</option>
+              <option value="starter">$10/mo Starter Link Page</option>
+              <option value="website">Full Website</option>
+              <option value="updates">Website Updates</option>
+              <option value="business">Business / Brand Page</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <textarea name="message" placeholder="Message" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="button button-primary">Send Project Request</button>
+        </form>
+
+        <div class="contact-quick">
+          <h3>Quick Contact</h3>
+          <a href="mailto:eight888studios@gmail.com" class="contact-button">
+            <span class="icon">📧</span>
+            Email
+          </a>
+          <a href="https://instagram.com/diosagency" class="contact-button" target="_blank" rel="noopener">
+            <span class="icon">📸</span>
+            Instagram
+          </a>
+          <a href="#contact" class="contact-button">
+            <span class="icon">📅</span>
+            Book Free Consult
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <div class="footer-logo">DIO'S <span class="red">AGENCY</span></div>
+        <p>Websites, link pages, and digital systems for creators, local businesses, and brands.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-email">
+        <a href="mailto:eight888studios@gmail.com">eight888studios@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

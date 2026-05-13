@@ -1,62 +1,62 @@
-const header = document.querySelector('[data-header]');
-const navToggle = document.querySelector('[data-nav-toggle]');
-const navMenu = document.querySelector('[data-nav-menu]');
-const form = document.querySelector('.contact-form');
-const formNote = document.querySelector('[data-form-note]');
-const filterButtons = document.querySelectorAll('[data-filter]');
-const projectCards = document.querySelectorAll('[data-category]');
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('open');
+}
 
-const updateHeader = () => {
-  header?.classList.toggle('is-scrolled', window.scrollY > 12);
-};
+function filterProjects(category) {
+  const chips = document.querySelectorAll('.filter-chip');
+  const projects = document.querySelectorAll('.project-card');
 
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
-
-navToggle?.addEventListener('click', () => {
-  const isOpen = navMenu.classList.toggle('is-open');
-  navToggle.setAttribute('aria-expanded', String(isOpen));
-});
-
-navMenu?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('is-open');
-    navToggle?.setAttribute('aria-expanded', 'false');
+  chips.forEach(chip => {
+    chip.classList.remove('active');
+    if (chip.textContent === category) {
+      chip.classList.add('active');
+    }
   });
-});
 
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-
-    filterButtons.forEach((chip) => chip.classList.toggle('is-active', chip === button));
-    projectCards.forEach((card) => {
-      card.classList.toggle('is-hidden', filter !== 'All' && card.dataset.category !== filter);
-    });
+  projects.forEach(project => {
+    if (category === 'All' || project.dataset.category === category) {
+      project.style.display = 'block';
+    } else {
+      project.style.display = 'none';
+    }
   });
-});
+}
 
-const observer = 'IntersectionObserver' in window
-  ? new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 })
-  : null;
-
-document.querySelectorAll('.reveal').forEach((item) => {
-  if (observer) {
-    observer.observe(item);
-  } else {
-    item.classList.add('is-visible');
-  }
-});
-
-form?.addEventListener('submit', (event) => {
+function handleSubmit(event) {
   event.preventDefault();
-  formNote.textContent = 'Thanks — your request is ready. Connect this form to email or a CRM to collect submissions.';
-  form.reset();
+
+  // Get form data
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+
+  // Replace this with your actual form submission logic
+  // For now, just construct a mailto link
+  const subject = `Project Request: ${data.service}`;
+  const body = `Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Service: ${data.service}
+Message: ${data.message || 'No additional message'}`;
+
+  const mailtoLink = `mailto:eight888studios@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Close mobile menu if open
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.remove('open');
+    }
+  });
 });
