@@ -3,42 +3,60 @@ const navToggle = document.querySelector('[data-nav-toggle]');
 const navMenu = document.querySelector('[data-nav-menu]');
 const form = document.querySelector('.contact-form');
 const formNote = document.querySelector('[data-form-note]');
-const year = document.querySelector('[data-year]');
-
-year.textContent = new Date().getFullYear();
+const filterButtons = document.querySelectorAll('[data-filter]');
+const projectCards = document.querySelectorAll('[data-category]');
 
 const updateHeader = () => {
-  header.classList.toggle('is-scrolled', window.scrollY > 12);
+  header?.classList.toggle('is-scrolled', window.scrollY > 12);
 };
 
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
-navToggle.addEventListener('click', () => {
+navToggle?.addEventListener('click', () => {
   const isOpen = navMenu.classList.toggle('is-open');
   navToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-navMenu.querySelectorAll('a').forEach((link) => {
+navMenu?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('is-open');
-    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle?.setAttribute('aria-expanded', 'false');
   });
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((chip) => chip.classList.toggle('is-active', chip === button));
+    projectCards.forEach((card) => {
+      card.classList.toggle('is-hidden', filter !== 'All' && card.dataset.category !== filter);
+    });
   });
-}, { threshold: 0.14 });
+});
 
-document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+const observer = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 })
+  : null;
 
-form.addEventListener('submit', (event) => {
+document.querySelectorAll('.reveal').forEach((item) => {
+  if (observer) {
+    observer.observe(item);
+  } else {
+    item.classList.add('is-visible');
+  }
+});
+
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
-  formNote.textContent = 'Thanks — your request is ready to send. Connect this form to your email or CRM to collect submissions.';
+  formNote.textContent = 'Thanks — your request is ready. Connect this form to email or a CRM to collect submissions.';
   form.reset();
 });
