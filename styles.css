@@ -50,6 +50,91 @@ button, input, textarea { font: inherit; }
 .page-glow--one { right: -12rem; top: 12rem; background: var(--brand-2); }
 .page-glow--two { left: -14rem; bottom: 2rem; background: var(--brand-3); }
 
+
+.floating-particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.particle {
+  --particle-size: 3px;
+  --particle-opacity: 0.18;
+  --float-x: 18vw;
+  --float-y: -22vh;
+  position: absolute;
+  display: block;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  overflow: hidden;
+  border-radius: 1px;
+  color: transparent;
+  background: rgba(255, 255, 255, var(--particle-opacity));
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.14);
+  opacity: 0;
+  text-indent: -9999px;
+  animation: particle-float 48s linear infinite;
+  will-change: transform, opacity;
+}
+
+.particle--glow {
+  --particle-size: 4px;
+  --particle-opacity: 0.20;
+}
+
+.particle:nth-child(1) { left: 6%; top: 18%; --particle-size: 2px; --particle-opacity: 0.16; --float-x: 24vw; --float-y: -28vh; animation-duration: 52s; animation-delay: -7s; }
+.particle:nth-child(2) { left: 14%; top: 76%; --particle-size: 3px; --particle-opacity: 0.12; --float-x: 36vw; --float-y: -42vh; animation-duration: 64s; animation-delay: -28s; }
+.particle:nth-child(3) { left: 25%; top: 34%; --particle-size: 2px; --particle-opacity: 0.18; --float-x: -18vw; --float-y: 31vh; animation-duration: 58s; animation-delay: -16s; }
+.particle:nth-child(4) { left: 36%; top: 86%; --particle-size: 3px; --particle-opacity: 0.11; --float-x: 21vw; --float-y: -58vh; animation-duration: 72s; animation-delay: -43s; }
+.particle:nth-child(5) { left: 48%; top: 14%; --particle-size: 2px; --particle-opacity: 0.15; --float-x: -28vw; --float-y: 39vh; animation-duration: 61s; animation-delay: -21s; }
+.particle:nth-child(6) { left: 57%; top: 61%; --particle-size: 4px; --particle-opacity: 0.10; --float-x: 30vw; --float-y: -37vh; animation-duration: 76s; animation-delay: -52s; }
+.particle:nth-child(7) { left: 68%; top: 27%; --particle-size: 2px; --particle-opacity: 0.17; --float-x: -34vw; --float-y: 24vh; animation-duration: 55s; animation-delay: -12s; }
+.particle:nth-child(8) { left: 78%; top: 79%; --particle-size: 3px; --particle-opacity: 0.12; --float-x: -22vw; --float-y: -46vh; animation-duration: 68s; animation-delay: -36s; }
+.particle:nth-child(9) { left: 87%; top: 12%; --particle-size: 2px; --particle-opacity: 0.16; --float-x: -41vw; --float-y: 29vh; animation-duration: 60s; animation-delay: -24s; }
+.particle:nth-child(10) { left: 93%; top: 49%; --particle-size: 3px; --particle-opacity: 0.10; --float-x: -33vw; --float-y: -32vh; animation-duration: 80s; animation-delay: -61s; }
+.particle:nth-child(11) { left: 11%; top: 47%; --particle-size: 2px; --particle-opacity: 0.14; --float-x: 43vw; --float-y: 27vh; animation-duration: 70s; animation-delay: -47s; }
+.particle:nth-child(12) { left: 72%; top: 90%; --particle-size: 3px; --particle-opacity: 0.11; --float-x: -30vw; --float-y: -62vh; animation-duration: 84s; animation-delay: -68s; }
+.particle:nth-child(13) {
+  left: 23%;
+  top: 25%;
+  --particle-size: 4px;
+  --particle-opacity: 0.18;
+  --float-x: 32vw;
+  --float-y: 44vh;
+  background: rgba(192, 57, 43, var(--particle-opacity));
+  box-shadow: 0 0 16px rgba(192, 57, 43, 0.24), 0 0 34px rgba(192, 57, 43, 0.12);
+  animation-duration: 88s;
+  animation-delay: -41s;
+}
+.particle:nth-child(14) {
+  left: 84%;
+  top: 64%;
+  --particle-size: 3px;
+  --particle-opacity: 0.13;
+  --float-x: -48vw;
+  --float-y: -36vh;
+  background: rgba(255, 255, 255, var(--particle-opacity));
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.16), 0 0 30px rgba(255, 255, 255, 0.08);
+  animation-duration: 92s;
+  animation-delay: -58s;
+}
+
+@keyframes particle-float {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.72);
+  }
+  12%, 78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--float-x), var(--float-y), 0) scale(1.08);
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
