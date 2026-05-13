@@ -25,6 +25,12 @@ export default function FloatingHachiHeader() {
               "--size": particle.size,
               "--delay": particle.delay,
               "--duration": particle.duration,
+              "--fly-x-1": particle.flyX1,
+              "--fly-y-1": particle.flyY1,
+              "--fly-x-2": particle.flyX2,
+              "--fly-y-2": particle.flyY2,
+              "--fly-x-3": particle.flyX3,
+              "--fly-y-3": particle.flyY3,
             } as React.CSSProperties
           }
         >
