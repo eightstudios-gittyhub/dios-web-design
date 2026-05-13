@@ -21,22 +21,6 @@ body {
   z-index: 0;
 }
 
-.header-hachi-layer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.45;
-  background:
-    radial-gradient(circle at 8% 28%, rgba(255, 255, 255, 0.95) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 26% 62%, rgba(125, 211, 252, 0.85) 0 1px, transparent 2px),
-    radial-gradient(circle at 48% 18%, rgba(216, 180, 254, 0.8) 0 1.2px, transparent 2.4px),
-    radial-gradient(circle at 73% 72%, rgba(34, 211, 238, 0.75) 0 1px, transparent 2px),
-    radial-gradient(circle at 91% 36%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px);
-  background-size: 160px 70px, 220px 95px, 190px 85px, 250px 110px, 140px 65px;
-  mix-blend-mode: screen;
-}
-
 .header-hachi {
   position: absolute;
   --fly-x-1: 36px;
@@ -47,28 +31,15 @@ body {
   --fly-y-3: 28px;
   left: var(--left);
   top: var(--top);
-  color: rgba(239, 68, 68, 0.82);
+  color: #ef4444;
   font-size: var(--size);
   font-weight: 700;
   line-height: 1;
-  opacity: 0.72;
+  opacity: 0.82;
   text-shadow:
-    0 0 6px rgba(248, 113, 113, 0.8),
-    0 0 14px rgba(220, 38, 38, 0.65),
-    0 0 26px rgba(185, 28, 28, 0.48);
-  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 28%, #a78bfa 58%, #22d3ee 78%, #f0abfc 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: var(--size);
-  font-weight: 700;
-  line-height: 1;
-  opacity: 0.78;
-  text-shadow:
-    0 0 6px rgba(34, 211, 238, 0.82),
-    0 0 14px rgba(167, 139, 250, 0.72),
-    0 0 24px rgba(59, 130, 246, 0.58),
-    0 0 38px rgba(14, 165, 233, 0.4);
+    0 0 6px rgba(248, 113, 113, 0.9),
+    0 0 14px rgba(220, 38, 38, 0.75),
+    0 0 26px rgba(185, 28, 28, 0.55);
   transform: translate3d(-50%, -50%, 0);
   animation: headerHachiFly var(--duration) infinite ease-in-out;
   animation-delay: var(--delay);
@@ -84,33 +55,19 @@ body {
 @keyframes headerHachiFly {
   0%, 100% {
     transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0) rotate(0deg) scale(0.9);
-    opacity: 0.42;
+    opacity: 0.48;
   }
   25% {
     transform: translate3d(-50%, -50%, 0) translate3d(var(--fly-x-1), var(--fly-y-1), 0) rotate(12deg) scale(1.08);
-    opacity: 0.92;
+    opacity: 0.95;
   }
   50% {
     transform: translate3d(-50%, -50%, 0) translate3d(var(--fly-x-2), var(--fly-y-2), 0) rotate(-10deg) scale(0.82);
-    opacity: 0.58;
+    opacity: 0.62;
   }
   75% {
     transform: translate3d(-50%, -50%, 0) translate3d(var(--fly-x-3), var(--fly-y-3), 0) rotate(9deg) scale(1);
-    opacity: 0.82;
-    transform: translate3d(-50%, -50%, 0) rotate(0deg);
-    opacity: 0.62;
-  }
-  25% {
-    transform: translate3d(calc(-50% + 8px), calc(-50% - 10px), 0) rotate(4deg);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translate3d(calc(-50% - 6px), calc(-50% + 8px), 0) rotate(-3deg);
-    opacity: 0.56;
-  }
-  75% {
-    transform: translate3d(calc(-50% + 10px), calc(-50% + 4px), 0) rotate(5deg);
-    opacity: 0.84;
+    opacity: 0.86;
   }
 }
 
